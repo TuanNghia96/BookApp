@@ -51,24 +51,24 @@
 			<div class="form-group" >
 				<label class="col-md-2">Ten khac hang</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="name">
+					<input class="form-control" type="text" name="name" required>
 				</div>
 			</div>
 			<div class="form-group" >
 				<label class="col-md-2">So dien thoai.</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="phone_number">
+					<input class="form-control" type="text" name="phone_number" required>
 				</div>
 			</div>
 			<div class="form-group" >
 				<label class="col-md-2">Dia chi</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="address">
+					<input class="form-control" type="text" name="address" required>
 				</div>
 			</div>
 			<div class="col-md-offset-2 col-md-10">
-				<label class="radio-inline">
-					Tại nhà:<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+				<label class="radio-inline" >
+					Tại nhà:<input  checked="checked" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
 				</label>
 				<label class="radio-inline">
 					Tại cửa hàng:<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
