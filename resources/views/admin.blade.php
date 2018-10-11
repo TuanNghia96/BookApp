@@ -24,4 +24,9 @@
 <div class="col-md-offset-4 col-md-4 text-center">
 {!!$phones->links()!!}
 </div>
+
+	<script>
+		$('#menu1').addClass( "active" );
+	</script>
+
 @endsection

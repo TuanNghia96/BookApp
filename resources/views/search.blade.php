@@ -94,6 +94,9 @@ foreach ($phones as $value) {
 			    </a>
 			</div>
 		@endforeach
+	<script>
+		$('#menu3').addClass( "active" );
+	</script>
 
 
 @endsection

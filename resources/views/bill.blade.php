@@ -83,33 +83,15 @@
 
 		</form>
 
-		{{-- <form action="{{route('postBill')}}" method="post">
-		@csrf
-			<table>
-				<tr>
-					<td>Ten khach hang*:</td>
-					<td><input type="text" name="name"></td>
-				</tr>
-				<tr>
-					<td>So dien thoai*:</td>
-					<td><input type="text" name="phone_number"></td>
-				</tr>
-				<tr>
-					<td>Dia chi*:</td>
-					<td><input type="text" name="address"></td>
-				</tr>
-				<tr>
-					<td colspan="2">Chon phuong thuc giao hang:</td>
-				</tr>
-				<tr>
-					<td>Tai noi ban:<input type="checkbox" name=""></td>
-					<td>Tan nha:<input type="checkbox" name=""></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" value="Thanh toan"></td>
-				</tr>
-			</table>
-		</form> --}}
+		
 	</div>
 </div>
+
+	<script>
+
+		var menu = $('#menu2');
+		$('#menu2').addClass( "active" );
+
+	</script>
+
 @endsection

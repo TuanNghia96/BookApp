@@ -44,5 +44,8 @@
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form> --}}
 
+	<script>
+		$('#menu4').addClass( "active" );
+	</script>
 
 @endsection
