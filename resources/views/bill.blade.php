@@ -46,7 +46,7 @@
 			</div>
 	
 
-		<form class="form-horizontal">
+		<form action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
 			<div class="form-group" >
 				<label class="col-md-2">Ten khac hang</label>
