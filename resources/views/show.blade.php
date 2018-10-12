@@ -1,6 +1,8 @@
 @extends('index')
 @section('title','Show')
 
+<link rel="stylesheet" href= "../css/bootstrap.min.css">
+
 @section('content')
 
 {{-- Product --}}

@@ -1,6 +1,3 @@
-
-
-
 @extends('index')
 @section('title','Admin')
 
