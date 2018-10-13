@@ -21,13 +21,11 @@ class myController extends Controller
             }
         }else{
             $owe = BillDetail::where('id_bill','=',Session::get('id'))->where('id_phone','=',6);
-            // return var_dump($owe);
-            
             $billDetail = Bill::find(1)->billDetail;
         }
 
         $billDetail = Bill::find(1)->billDetail;
-		$phones = Phone::simplePaginate(6);  
+		$phones = Phone::orderBy('id', 'desc')->simplePaginate(6) ;  
     	return view('admin',["phones"=>$phones,'bill'=>$billDetail]);
     }
     public function getShow($id){
