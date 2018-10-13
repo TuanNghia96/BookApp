@@ -2,10 +2,7 @@
 @extends('index')
 @section('title','Search')
 @section('content')
-<?php
-if (isset($_COOKIE['date'])) {
-	echo $_COOKIE['date'];
-}
+<?php	
 $i=0;
 foreach ($phones as $value) {
 	$i++;
@@ -28,7 +25,7 @@ foreach ($phones as $value) {
 		  </div>
 		  <div class="form-group">
 		  	<select name="type" class="form-control">
-				<option value="">Tat ca</option>
+				<option value="">Tất cả</option>
 				<option value="iphone">Iphone</option>
 				<option value="samsung">SamSung</option>
 				<option value="oppo">Oppo</option>
@@ -41,11 +38,11 @@ foreach ($phones as $value) {
 		  </div>
 		  <div class="form-group">
 		  	<select name="cost" class="form-control">
-				<option value="">Tat ca</option>
-				<option value="0-2">Duoi 2 trieu</option>
-				<option value="2-4">2 den 4 trieu</option>
-				<option value="4-8">4 den 8 trieu</option>
-				<option value="8-">tren 8 trieu</option>
+				<option value="">Tất cả</option>
+				<option value="0-2">Dưới 2 triệu</option>
+				<option value="2-4">2 đến 4 triệu</option>
+				<option value="4-8">4 đến 8 triệu</option>
+				<option value="8-">trên 8 triệu</option>
 			</select>
 
 		  </div>
@@ -75,7 +72,7 @@ foreach ($phones as $value) {
 	@foreach($phones as $value)
 		<div class="col-xs-4 col-md-3 col-sm-4">
 
-			    <a href="#" class="thumbnail">
+			    <a href="{{route('show',$value['id'])}}" class="thumbnail">
 			    	<h4>{{$value['name']}}</h4>
 			      <img class="img-responsive" src="https://cdn.tgdd.vn/Products/Images/42/192001/samsung-galaxy-j6-plus-1-400x400.jpg">
 			{{$value['cost']}}

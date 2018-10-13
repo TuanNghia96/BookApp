@@ -61,7 +61,6 @@ class myController extends Controller
         $phones = Phone::all();
         }
         if ($request->type != "") {
-            echo "toi la nghia";
         $phones = $phones->where('made',$request->type);
         $search['Loai:'] = $request->type;
         }
@@ -89,15 +88,21 @@ class myController extends Controller
             $billDetail->cost = $request->cost*$request->number;
             $billDetail->number = $request->number;
             $billDetail->color = $request->color;
-            if($billDetail->save())
+            if($billDetail->save()){
+                $number = BillDetail::where('id_bill',Session::get('id'))->count();
+                Session::put('number',$number);
                 return redirect()->route('home');
         }else
             return redirect()->route('home');
     }
+}
 
     public function deleteBillDetail($id){
-        if(BillDetail::destroy($id))
+        if(BillDetail::destroy($id)){
+            $number = BillDetail::where('id_bill',Session::get('id'))->count();
+                Session::put('number',$number);
             return redirect()->route('getBill');
+        }
     }
 
 

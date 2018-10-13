@@ -6,7 +6,7 @@ if (isset($_COOKIE['date'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Trang chu | @yield('title')</title>
+	<title>Trang chủ | @yield('title')</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 {{-- bootrap --}}
 <link rel="stylesheet" href= "http://localhost/BookApp/public/css/bootstrap-theme.min.css">

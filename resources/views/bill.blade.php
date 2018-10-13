@@ -15,12 +15,12 @@
 		<div class="table-responsive">
 		<table class="table table-hover">
 			<thead>
-				<th>Ten san pham:</th>
-				<th>Mau sac:</th>
-				<th>So luong:</th>
-				<th>Thanh tien:</th>
-				<th>Xoa</th>
-				<th>xem</th>
+				<th>Tên sản phẩm:</th>
+				<th>Màu sắc:</th>
+				<th>Số lượng:</th>
+				<th>Thành tiền:</th>
+				<th>Xóa</th>
+				<th>Xem</th>
 			</thead>
 		@foreach($billDetail as $value)
 			<tbody>
@@ -28,8 +28,8 @@
 				<td>{{$value->color}}</td>
 				<td>{{$value->number}}</td>
 				<td>{{$value->cost}}</td>
-				<td><a href="{{route('rmBillD',$value['id'])}}">Xoa don hang.</a></td>
-				<th><a href="{{route('show',$value['id_phone'])}}">Xem chi tiet.</a></th>
+				<td><a href="{{route('rmBillD',$value['id'])}}">Xóa đơn hàng.</a></td>
+				<th><a href="{{route('show',$value['id_phone'])}}">Xem chi tiết.</a></th>
 			</tbody>
 		@endforeach
 
@@ -49,19 +49,19 @@
 		<form action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
 			<div class="form-group" >
-				<label class="col-md-2">Ten khac hang</label>
+				<label class="col-md-2">Nhập tên *:</label>
 				<div class="col-md-10">
 					<input class="form-control" type="text" name="name" required>
 				</div>
 			</div>
 			<div class="form-group" >
-				<label class="col-md-2">So dien thoai.</label>
+				<label class="col-md-2">Số điện thoại *:</label>
 				<div class="col-md-10">
 					<input class="form-control" type="text" name="phone_number" required>
 				</div>
 			</div>
 			<div class="form-group" >
-				<label class="col-md-2">Dia chi</label>
+				<label class="col-md-2">Địa chỉ *:</label>
 				<div class="col-md-10">
 					<input class="form-control" type="text" name="address" required>
 				</div>

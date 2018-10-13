@@ -44,7 +44,7 @@
 	    <div class="col-md-12">
 	    <div class="col-md-4">
 	    
-	    	<label>Chon mau:</label>
+	    	<label>Chọn màu:</label>
 	    	<select name="color" class="form-control">
 	    		{{-- <option>--chọn màu--</option> --}}
 				<option value="Black">Màu Đen</option>
@@ -72,7 +72,7 @@
 </div>
 <div class="col-md-12">
 	
-	<h4>Thong tin dien thoai</h4>
+	<h4>Thông tin điện thoại.</h4>
 
 	<div class="col-md-4">
 		<table class="table table-striped">
@@ -103,7 +103,7 @@
 </table>
 </div>
 		<div class="col-md-12" style="font-size:15px;">
-			<b>Thong tin chi tiet</b><br>
+			<b>Thông tin chi tiết:</b><br>
 			<img  width="100%" float="left" src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2018/09/galaxy-j6-plus-ra-mat-3.jpg">
 	
 		
