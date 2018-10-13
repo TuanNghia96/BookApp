@@ -24,19 +24,28 @@
 			<input type="hidden" name="name" value="{{$phone['name']}}">
 			<input type="hidden" name="cost" value="{{$phone['cost']}}">
 		<div  float='right' class="col-md-12 " height="auto">
-			
-			<label>Nhập số lượng:</label>
-			<button id="btnMinus" type="button" disabled>
-				<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-			</button>
-			<input float='left' id="ipNumber" width="20px" type="number" name="number" min="1" max="5" value="1" required readonly >
-	        <button id="btnPlus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+		    <div class="col-md-12">
+			    <label for="ex1">Nhập số lượng:</label>
+			</div>
+			<div class="col-md-1">
+				<button id="btnMinus" type="button" class="btn btn-default" aria-label="Left Align" disabled>
+				  <span class="lyphicon glyphicon-minus" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="col-md-2">
+			    <input float='left' id="ipNumber" width="20px" type="number" name="number" min="1" max="5" class="form-control" value="1" required readonly >
+			</div>
+				<button id="btnPlus" type="button" class="btn btn-default" aria-label="Left Align">
+				  <span class="lyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button>
+
 
 	    </div>
 	    <div class="col-md-12">
+	    <div class="col-md-4">
 	    
 	    	<label>Chon mau:</label>
-	    	<select name="color">
+	    	<select name="color" class="form-control">
 	    		{{-- <option>--chọn màu--</option> --}}
 				<option value="Black">Màu Đen</option>
 	        	<option value="White">Màu Trắng</option>
@@ -44,15 +53,21 @@
 	        	<option value="Blue">Màu Xanh</option>
 				<option value="Yellow">Màu Vàng</option>
 			</select><br>
-			<button> </button>
 
 	    </div>
-
-	    <div id="ad_bill" class="col-md-12" >
-		    <button type="submit" class="btn btn-primary" aria-label="Left Align">
-				<span class="" aria-hidden="true"> Thêm vào giỏ hàng.</span>
+	</div>
+	    <div id="ad_bill" class="col-md-4" >
+	    	<button type="submit" class="btn btn-primary" aria-label="Left Align">
+				<span class="" aria-hidden="true">Thêm vào giỏ hàng.</span>
 			</button>
 		</div>
+@if($check != 0)
+			<button type="submit" class="btn btn-info" aria-label="Left Align" disabled>
+				<span class="" aria-hidden="true">Đã có.</span>
+			</button>
+
+@endif	
+		
 	</form>
 </div>
 <div class="col-md-12">
