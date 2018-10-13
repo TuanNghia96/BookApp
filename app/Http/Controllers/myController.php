@@ -31,9 +31,12 @@ class myController extends Controller
     	return view('admin',["phones"=>$phones,'bill'=>$billDetail]);
     }
     public function getShow($id){
-
+        $check = 0;
     	$phone = Phone::find($id);
-    	return view('show',['phone'=>$phone]);
+        if (Bill::find(Session::get('id'))->billDetail()->where('id_phone','=',$id)->first()) {
+            $check = 1;
+        }
+    	return view('show',['phone'=>$phone,'check'=>$check]);
     }
     public function postComment(Request $request){
     	$post = new Post;
