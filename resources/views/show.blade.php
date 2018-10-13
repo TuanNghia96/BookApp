@@ -19,7 +19,7 @@
 		
 
 		<form method="post" action="{{route('adPhone')}}">
-	@csrf
+			@csrf
 			<input type="hidden" name="id" value="{{$phone['id']}}">
 			<input type="hidden" name="name" value="{{$phone['name']}}">
 			<input type="hidden" name="cost" value="{{$phone['cost']}}">
@@ -74,36 +74,47 @@
 	
 	<h4>Thong tin dien thoai</h4>
 
-	<div>
-		<table>
+	<div class="col-md-4">
+		<table class="table table-striped">
 			<tr>
-				<td class='show'>Loai dien thoai:</td>
-				<td class='show'>{{$phone['make']}}</td>
+				<td>Hệ điều hành:</td>
+				<td>{{$phone['os']}}</td>
 			</tr>
 			<tr>
-				<td class='show'>Kich co man hinh:	</td>
-				<td class='show'>{{$phone['size']}}</td>
+				<td>Ram:</td>
+				<td>{{$phone['ram']}}</td>
+			</tr>
+			<tr>
+				<td>Bộ nhớ trong:</td>
+				<td>{{$phone['memory']}}</td>
+			</tr>
+
+			<tr>
+				<td>Kích cỡ màn hình:	</td>
+				<td>{{$phone['size']}}</td>
 				
 			</tr>
 			<tr>
-				<td class='show'>Can nang dien thoai:</td>
-				<td class='show'>{{$phone['weigh']." gram"}}</td>
+				<td>Cân nặng điện thoại:</td>
+				<td>{{$phone['weigh']." gram"}}</td>
 				
 			</tr>
-		</table>
-		<div class="col-md-12"></div>
-			<img  height="220" float="left" src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2018/09/galaxy-j6-plus-ra-mat-3.jpg">
-		</div>
-		<b>Thong tin chi tiet</b><br>
+
+</table>
+</div>
+		<div class="col-md-12" style="font-size:15px;">
+			<b>Thong tin chi tiet</b><br>
+			<img  width="100%" float="left" src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2018/09/galaxy-j6-plus-ra-mat-3.jpg">
+	
+		
 		<p>- Camera chính 13MP với f/2.2, tự động lấy nét, đèn flash kép LED, gắn thẻ địa lý, lấy nét cảm ứng, dò tìm khuôn mặt/nụ cười, HDR và camera mặt trước 2MP
 			- Màn hình cảm ứng điện dung IPS LCD 12,7 cm (5 inch) với độ phân giải 1080 x 1920 pixel, mật độ điểm ảnh 441 ppi và hỗ trợ màu 16M
 			- Android v6.0Marshmallow</p>
 		{{-- {{$phone['info']}} --}}
-	</div>
-	<div class="col-md-12">
+	
 		<img height="220" float="left" src="https://st1.bgr.in/wp-content/uploads/2018/01/samsung-galaxy-A8-plus-review-rear-camera.jpg">
 	</div>
-</div>
+
 
 <script>
 	

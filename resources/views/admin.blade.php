@@ -28,5 +28,4 @@
 	<script>
 		$('#menu1').addClass( "active" );
 	</script>
-
 @endsection
