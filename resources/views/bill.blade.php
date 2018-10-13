@@ -63,18 +63,22 @@
 			<div class="form-group" >
 				<label class="col-md-2">Địa chỉ *:</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="address" required>
+					<input id='ipAdd' class="form-control" type="text" name="address" placeholder="Không cần nếu nhận tại cửa hàng." required>
 				</div>
 			</div>
-			<div class="col-md-offset-2 col-md-10">
-				<label class="radio-inline" >
-					Tại nhà:<input  checked="checked" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-				</label>
-				<label class="radio-inline">
-					Tại cửa hàng:<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-				</label>
+			<div class="form-group" >
+				<div class="col-md-2">
+					<label>Phương thức:</label>
+				</div>
+				<div class="col-md-10">
+					<label class="radio-inline" >
+						Tại nhà:<input  checked="checked" id="ipHome" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+					</label>
+					<label class="radio-inline">
+						Tại cửa hàng:<input type="radio" id="ipShop" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+					</label>
+				</div>
 			</div>
-
  
 
 
@@ -88,6 +92,14 @@
 </div>
 	<script>
 		$('#menu2').addClass( "active" );
+		$('#ipShop').click(function(){
+			$('#ipAdd').removeAttr('required');
+			$('#ipAdd').attr('disabled','disabled');
+		});
+		$('#ipHome').click(function(){
+			$('#ipAdd').attr('required','required');
+			$('#ipAdd').removeAttr('disabled','disabled');
+		});
 	</script>
 
 @endsection

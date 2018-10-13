@@ -18,6 +18,7 @@ class myController extends Controller
             $bill = new Bill;
             if($bill->save()){
                 Session::put('id',$bill->id);
+                Session::put('number',0);
             }
         }else{
             $owe = BillDetail::where('id_bill','=',Session::get('id'))->where('id_phone','=',6);
@@ -122,7 +123,10 @@ class myController extends Controller
         $bill = Bill::find(Session::get('id'));
         $bill->name = $request->name;
         $bill->phone_number = $request->phone_number;
+        if ($request->address !="") {
         $bill->address = $request->address;
+        }
+        $bill->address = "nothing";
         $bill->status = 'delivering';
         $bill->create_at = date('Y-m-d H:i:s');
         if($bill->save())
