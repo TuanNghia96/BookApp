@@ -21,7 +21,7 @@ foreach ($phones as $value) {
 		    <label>Theo tên:</label>
 		  </div>
 		  <div class="form-group">
-		    <input type="text" class="form-control" id="inputPassword2" placeholder="Password">
+		    <input type="text" class="form-control" name="name" id="inputPassword2" placeholder="tên điện thoại">
 		  </div>
 		  <div class="form-group">
 		    <label>Theo loại:</label>
@@ -61,7 +61,11 @@ foreach ($phones as $value) {
 			<span class="label label-primary">{{$value}}</span>
 			{{-- <div id="item-value">{{$value	}}</div> --}}
 		@endforeach
-		<p>Tìm thấy {{$i}} sản phẩm</p>
+	</div>
+		<div class="col-md-12">
+			<p>Tìm thấy {{$i}} sản phẩm</p>
+		</div>
+		
 		
 		</div>
 	@endif
