@@ -19,6 +19,11 @@ class myController extends Controller
             if($bill->save()){
                 Session::put('id',$bill->id);
             }
+        }else{
+            $owe = BillDetail::where('id_bill','=',Session::get('id'))->where('id_phone','=',6);
+            // return var_dump($owe);
+            
+            $billDetail = Bill::find(1)->billDetail;
         }
 
         $billDetail = Bill::find(1)->billDetail;
@@ -108,7 +113,6 @@ class myController extends Controller
         return view('bill',['billDetail'=>$billDetail,'cost'=>$money]);
     }
     public function postBill(Request $request){
-        // return var_dump($request->);
         $bill = Bill::find(Session::get('id'));
         $bill->name = $request->name;
         $bill->phone_number = $request->phone_number;

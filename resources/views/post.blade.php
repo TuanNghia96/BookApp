@@ -1,5 +1,5 @@
 @extends('index')
-@section('title','Admin')
+@section('title','Post')
 
 @section('content')
 

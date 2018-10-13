@@ -21,7 +21,7 @@ Route::get('show/{id}',['as'=>'show','uses'=>'MyController@getShow']);
 Route::get('test',function(){
 	return view('test');
 });
-
+ 
 
 //Comment
 Route::get('post',function(){
@@ -51,3 +51,7 @@ Route::get('Bill',['as'=>'getBill','uses'=>'myController@getBill']);
 Route::post('Bill',['as'=>'postBill','uses'=>'myController@postBill']);
 
 
+//About Us
+Route::get('About_Us',function(){
+	return view('about');
+})->name('about');

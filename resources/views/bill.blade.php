@@ -2,13 +2,13 @@
 	{{print_r($bill[0])}}
 @endif --}}
 @extends('index')
-@section('title','Admin')
+@section('title','Bill')
 @section('content')
 <?$i = 0;?>
 {{-- Bills --}}
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3>Hoa don:</h3>
+		<h3>Đơn hàng #{{Session::get('id')}}:</h3>
 	</div>
 	<div class="panel-body">
 
@@ -86,12 +86,8 @@
 		
 	</div>
 </div>
-
 	<script>
-
-		var menu = $('#menu2');
 		$('#menu2').addClass( "active" );
-
 	</script>
 
 @endsection
