@@ -23,11 +23,11 @@
 		<div  float='right' class="col-md-12 " height="auto">
 			
 			<label>Nhập số lượng:</label>
-			<button id="btnPlus" type="button">
+			<button id="btnMinus" type="button">
 				<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
 			</button>
-			<input float='left' width="20px" type="number" name="number" min="1" max="5" value="1" required>
-	        <button id="btnMinus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+			<input float='left' id="ipNumber" width="20px" type="number" name="number" min="1" max="5" value="1" required readonly>
+	        <button id="btnPlus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 
 	    </div>
 	    <div class="col-md-12">
@@ -82,9 +82,16 @@
 
 <script>
 
-	$('#button').click(function(){
-				alert("nghia");
-			});
-
+	$('#btnPlus').click(function(){
+		var number =  Number($('#ipNumber').val())+1;
+				$('#ipNumber').val(number);
+		});
+	$('#btnMinus').click(function(){
+		if ($('#ipNumber').val()>1) {
+			var number =  Number($('#ipNumber').val())-1;
+				$('#ipNumber').val(number);
+		}
+		
+		});
 </script>
 @endsection
