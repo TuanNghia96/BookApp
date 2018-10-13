@@ -37,7 +37,7 @@
 	    
 	    	<label>Chon mau:</label>
 	    	<select name="color">
-	    		<option>--chọn màu--</option>
+	    		{{-- <option>--chọn màu--</option> --}}
 				<option value="Black">Màu Đen</option>
 	        	<option value="White">Màu Trắng</option>
 	        	<option value="Red">Màu Đỏ</option>
@@ -48,8 +48,10 @@
 
 	    </div>
 
-	    <div id="ad_bill" class="col-md-12">
-		    <input type="submit" value="Them vao gioi hang">
+	    <div id="ad_bill" class="col-md-12" >
+		    <button type="submit" class="btn btn-primary" aria-label="Left Align">
+				<span class="" aria-hidden="true"> Thêm vào giỏ hàng.</span>
+			</button>
 		</div>
 	</form>
 </div>
