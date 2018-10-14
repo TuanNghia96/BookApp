@@ -12,6 +12,7 @@ use App\Post;
 
 class myController extends Controller
 {
+    //view Home
     public function getView(){
         $response = new Response();
         if(!Session::get('id')){
@@ -29,6 +30,7 @@ class myController extends Controller
 		$phones = Phone::orderBy('id', 'desc')->simplePaginate(6) ;  
     	return view('admin',["phones"=>$phones,'bill'=>$billDetail]);
     }
+    //view show
     public function getShow($id){
         $check = 0;
     	$phone = Phone::find($id);
@@ -93,9 +95,12 @@ class myController extends Controller
                 $number = BillDetail::where('id_bill',Session::get('id'))->count();
                 Session::put('number',$number);
                 return redirect()->route('home');
-        }else
+            }
+        }else{
+            BillDetail::where('id_bill',Session::get('id'))->where('name',$request->name)->where('color',$request->color)->update(['number'=>$request->number,'cost'=>($request->cost*$request->number)]);
             return redirect()->route('home');
-    }
+        }
+    
 }
 
     public function deleteBillDetail($id){
@@ -109,15 +114,19 @@ class myController extends Controller
 
 
     public function getBill(){
-        $bill = Bill::find(Session::get('id'));
-        $billDetail = $bill->billDetail()->get();
-        $money = 0;
-        foreach ($billDetail AS &$value) {
-            $money += $value->cost;
+        if (is_null(Session::get('id'))) {
+            return redirect()->route('home');
+        }else{
+            $bill = Bill::find(Session::get('id'));
+            $billDetail = $bill->billDetail()->get();
+            $money = 0;
+            foreach ($billDetail AS &$value) {
+                $money += $value->cost;
+            }
+            $bill->cost = $money;
+            $bill->save();
+            return view('bill',['billDetail'=>$billDetail,'cost'=>$money]);
         }
-        $bill->cost = $money;
-        $bill->save();
-        return view('bill',['billDetail'=>$billDetail,'cost'=>$money]);
     }
     public function postBill(Request $request){
         $bill = Bill::find(Session::get('id'));

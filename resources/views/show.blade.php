@@ -46,7 +46,6 @@
 	    
 	    	<label>Chọn màu:</label>
 	    	<select name="color" class="form-control">
-	    		{{-- <option>--chọn màu--</option> --}}
 				<option value="Black">Màu Đen</option>
 	        	<option value="White">Màu Trắng</option>
 	        	<option value="Red">Màu Đỏ</option>
@@ -62,7 +61,7 @@
 			</button>
 		</div>
 @if($check != 0)
-			<button type="submit" class="btn btn-info" aria-label="Left Align" disabled>
+			<button class="btn btn-info" aria-label="Left Align" disabled>
 				<span class="" aria-hidden="true">Đã có.</span>
 			</button>
 

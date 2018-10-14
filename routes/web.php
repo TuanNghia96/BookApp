@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /*
 |--------------------------------------------------------------------------
@@ -28,23 +28,17 @@ Route::get('post',function(){
 	return view('post');
 })->name('getPost');
 
-Route::post('posted',[	'as'=>'post',
-						'uses'=>'myController@postComment'
-					]);
+Route::post('posted',['as'=>'post','uses'=>'myController@postComment']);
 
 //Search
-Route::get('Search',[	'as'=>'getSearch',
-						'uses'=>'myController@getSearch'
-					]);
-Route::post('Searched',[	'as'=>'postSearch',
-						'uses'=>'myController@postSearch'
-					]);
+Route::get('Search',[	'as'=>'getSearch','uses'=>'myController@getSearch']);
+Route::post('Searched',[	'as'=>'postSearch','uses'=>'myController@postSearch']);
+
 
 //Client
-
-
 Route::post('addPhone',['as'=>'adPhone','uses'=>'MyController@postPhone']);
 Route::get('rmBillD/{id}',['as'=>'rmBillD','uses'=>'MyController@deleteBillDetail']);
+
 
 //Bill
 Route::get('Bill',['as'=>'getBill','uses'=>'myController@getBill']);

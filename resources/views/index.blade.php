@@ -1,8 +1,4 @@
-<?php
-if (isset($_COOKIE['date'])) {
-    setcookie('date', date('Y-m-d H:i:s'), time() + 60);
-}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +12,11 @@ if (isset($_COOKIE['date'])) {
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<?php
+if (is_null(Session::get('id'))) {
+     echo "<meta http-equiv='refresh' content='0;url=http://localhost/BookApp/public/home'>";
+	}
+?>
 
 {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 

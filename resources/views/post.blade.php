@@ -3,6 +3,7 @@
 
 @section('content')
 
+{{-- form post --}}
 <form action="{{route('post')}}" method="post">
 	@csrf
 		<legend>Thông tin đến người quản trị.</legend>
@@ -26,21 +27,7 @@
 		</tr>
 	</table>
 </form>
-
-
-{{-- <form action="{{route('post')}}" method="post">
-	<legend>Form title</legend>
-	@csrf
-	<div class="form-group">
-		<label for="">label</label>
-		<input type="text" class="form-control" id="" placeholder="Input field">
-	</div>
-
-	
-
-	<button type="submit" class="btn btn-primary">Submit</button>
-</form> --}}
-
+{{-- script --}}
 	<script>
 		$('#menu4').addClass( "active" );
 	</script>
