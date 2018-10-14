@@ -37,6 +37,7 @@
 		</div>
 
 
+
 		
 			<div class="col-md-8 col-sm-5" style="padding:0px;">
 				<h3>Tổng hóa đơn:</h3>
@@ -46,18 +47,18 @@
 			</div>
 	
 
-		<form action="{{route('postBill')}}" method="post" class="form-horizontal">
+		<form id="myform" action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
 			<div class="form-group" >
 				<label class="col-md-2">Nhập tên *:</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="name" required>
+					<input id="ipName" class="form-control" type="text" name="name" required>
 				</div>
 			</div>
 			<div class="form-group" >
 				<label class="col-md-2">Số điện thoại *:</label>
 				<div class="col-md-10">
-					<input class="form-control" type="text" name="phone_number" required>
+					<input id="ipSdt" class="form-control" type="text" name="phone_number" required>
 				</div>
 			</div>
 			<div class="form-group" >
@@ -83,13 +84,58 @@
 
 
 
-			<button type="submit" class="btn btn-primary">Thanh toan</button>
+			{{-- <button type="submit" class="btn btn-primary">Thanh toan</button> --}}
 
 		</form>
-
+		<button  id="btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				  Xác nhận.
+				</button>
 		
 	</div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Xác nhận đơn hàng.</h4>
+      </div>
+      <div class="modal-body">
+        	<table class="table table-striped">
+			<tr>
+				<td>Tên khách hàng:</td>
+				<td><b id="name"></b></td>
+			</tr>
+			<tr>
+				<td>Số điện thoại</td>
+				<td><b id="sdt">	</b></td>
+			</tr>
+			<tr>
+				<td colspan="2">Địa chỉ giao hoặc nhận hàng:</td>
+			</tr>
+
+			<tr>
+				<td colspan="2" class="text-right"><b id="add">	</b></td>
+				
+			</tr>
+			<tr>
+				<td>Hóa Đơn:</td>
+				<td>{{$cost." đồng"}}</td>
+			</tr>
+
+</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        <button form="myform" type="submit" class="btn btn-primary">Thanh toan</button>
+      </div>
+    </div>
+  </div>
+</div>	
+
+
 	<script>
 		$('#menu2').addClass( "active" );
 		$('#ipShop').click(function(){
@@ -100,6 +146,16 @@
 			$('#ipAdd').attr('required','required');
 			$('#ipAdd').removeAttr('disabled','disabled');
 		});
+
+		$('#btn').click(function(){
+				$('#name').text($('#ipName').val());
+				$('#sdt').text($('#ipSdt').val());
+				$('#add').text($('#ipAdd').val());
+		});
 	</script>
+
+
+
+
 
 @endsection
