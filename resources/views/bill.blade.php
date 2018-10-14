@@ -49,8 +49,9 @@
 {{-- Form Info --}}
 
 <div class="col-md-12 col-sm-12"></div>
-<legend>Nhập thông tin khách hàng</legend>
-@if($billDetail->count() != 0)
+
+@if(($billDetail->count() != 0) && ($status == 0))
+		<legend>Nhập thông tin khách hàng</legend>
 		<form id="myform" action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
 			<div id="dvErName" class="col-md-offset-2 col-md-10" style="color: red;"></div>
@@ -95,7 +96,12 @@
 				  Xác nhận.
 				</button>
 		</form>
-@endif	
+@elseif($status == 1)
+	<div class="col-md-12">
+		<h2>Đã thanh toán!! Cảm ơn đã mua hàng</h2>
+	</div>
+
+@endif
 </div>	
 		
 	</div>

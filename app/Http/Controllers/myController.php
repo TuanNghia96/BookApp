@@ -118,6 +118,10 @@ class myController extends Controller
             return redirect()->route('home');
         }else{
             $bill = Bill::find(Session::get('id'));
+            if ($bill->status=="processing") {
+                $status = 1;
+            }else
+                $status = 0;
             $billDetail = $bill->billDetail()->get();
             $money = 0;
             foreach ($billDetail AS &$value) {
@@ -125,7 +129,7 @@ class myController extends Controller
             }
             $bill->cost = $money;
             $bill->save();
-            return view('bill',['billDetail'=>$billDetail,'cost'=>$money]);
+            return view('bill',['billDetail'=>$billDetail,'cost'=>$money,'status'=>$status]);
         }
     }
     public function postBill(Request $request){
