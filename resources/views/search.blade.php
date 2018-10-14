@@ -10,8 +10,9 @@ foreach ($phones as $value) {
 ?>
 
 {{-- search-bar --}}
-	<legend>Tìm kiếm sản phẩm.</legend>
 
+	<legend>Tìm kiếm sản phẩm.</legend>
+	
 	<form class="form-inline" action="{{route('postSearch')}}" method="post">
 		@csrf
 		  <div class="form-group">
@@ -46,8 +47,9 @@ foreach ($phones as $value) {
 			</select>
 
 		  </div>
-		  <button type="submit" class="btn btn-primary">Tìm kiếm.</button>
-
+		  <div class="form-group text-center">
+			  <button type="submit" class="btn btn-primary">Tìm kiếm.</button>
+		  </div>
 
 	<div class="seating">
 	@if(isset($request))
@@ -59,7 +61,7 @@ foreach ($phones as $value) {
 			{{-- <div id="item-value">{{$value	}}</div> --}}
 		@endforeach
 	</div>
-		<div class="col-md-12">
+		<div class="col-md-12 col-sm-12 col-xs-12">
 			<p>Tìm thấy {{$i}} sản phẩm</p>
 		</div>
 		
@@ -70,7 +72,7 @@ foreach ($phones as $value) {
 
 	<ul class="homeproduct" style="list-style: none;">
 	@foreach($phones as $value)
-		<div class="col-xs-4 col-md-3 col-sm-4">
+		<div class="col-xs-6 col-md-3 col-sm-4">
 
 			    <a href="{{route('show',$value['id'])}}" class="thumbnail">
 			    	<h4>{{$value['name']}}</h4>
