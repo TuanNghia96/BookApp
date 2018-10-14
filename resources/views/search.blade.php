@@ -79,7 +79,7 @@ foreach ($phones as $value) {
 	    	<label>{{$value['name']}}</label>
 	    	<img class="img-responsive" src="https://cdn.tgdd.vn/Products/Images/42/192001/samsung-galaxy-j6-plus-1-400x400.jpg">
 	    	<p><hr></p>
-	    	<span><h5 style="text-align: right;">{{$value['cost']}} đồng</h5></span>
+	    	<span><h5 style="text-align: right;">{{number_format($value['cost'])}}₫</h5></span>
     	
 	    </a>
 	</div>
