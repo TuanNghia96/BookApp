@@ -1,6 +1,4 @@
-{{-- @if(Session('date'))
-	{{print_r($bill[0])}}
-@endif --}}
+
 @extends('index')
 @section('title','Bill')
 @section('content')
@@ -37,7 +35,7 @@
 		</div>
 
 
-
+		<div class="col-md-12 col-sm-12">
 		
 			<div class="col-md-8 col-sm-5" style="padding:0px;">
 				<h3>Tổng hóa đơn:</h3>
@@ -45,7 +43,14 @@
 			<div class="col-md-4 col-sm-5" style="padding:0px;">
 				<h3 class="text-right">{{$cost." đồng"}}</h3>
 			</div>
+		</div>
 
+
+{{-- Form Info --}}
+
+<div class="col-md-12 col-sm-12"></div>
+<legend>Nhập thông tin khách hàng</legend>
+@if($billDetail->count() != 0)
 		<form id="myform" action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
 			<div class="form-group" >
@@ -79,16 +84,12 @@
 					</label>
 				</div>
 			</div>
- 
-
-
-
-			{{-- <button type="submit" class="btn btn-primary">Thanh toan</button> --}}
-
-		</form>
-		<button  id="btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+ 			<button  id="btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 				  Xác nhận.
 				</button>
+		</form>
+@endif	
+</div>	
 		
 	</div>
 </div>
@@ -103,28 +104,27 @@
       </div>
       <div class="modal-body">
         	<table class="table table-striped">
-			<tr>
-				<td>Tên khách hàng:</td>
-				<td><b id="name"></b></td>
-			</tr>
-			<tr>
-				<td>Số điện thoại</td>
-				<td><b id="sdt">	</b></td>
-			</tr>
-			<tr>
-				<td colspan="2">Địa chỉ giao hoặc nhận hàng:</td>
-			</tr>
+				<tr>
+					<td>Tên khách hàng:</td>
+					<td><b id="name"></b></td>
+				</tr>
+				<tr>
+					<td>Số điện thoại</td>
+					<td><b id="sdt">	</b></td>
+				</tr>
+				<tr>
+					<td colspan="2">Địa chỉ giao hoặc nhận hàng:</td>
+				</tr>
 
-			<tr>
-				<td colspan="2" class="text-right"><b id="add">	</b></td>
-				
-			</tr>
-			<tr>
-				<td>Hóa Đơn:</td>
-				<td>{{$cost." đồng"}}</td>
-			</tr>
-
-</table>
+				<tr>
+					<td colspan="2" class="text-right"><b id="add">	</b></td>
+					
+				</tr>
+				<tr>
+					<td>Hóa Đơn:</td>
+					<td>{{$cost." đồng"}}</td>
+				</tr>
+			</table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
@@ -134,7 +134,7 @@
   </div>
 </div>	
 
-
+{{-- script --}}
 	<script>
 		$('#menu2').addClass( "active" );
 		$('#ipShop').click(function(){
@@ -156,9 +156,5 @@
 				}
 		});
 	</script>
-
-
-
-
 
 @endsection
