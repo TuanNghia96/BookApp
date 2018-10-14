@@ -45,7 +45,6 @@
 			<div class="col-md-4 col-sm-5" style="padding:0px;">
 				<h3 class="text-right">{{$cost." đồng"}}</h3>
 			</div>
-	
 
 		<form id="myform" action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
@@ -148,9 +147,13 @@
 		});
 
 		$('#btn').click(function(){
+				var add = 'Tầng 8 thư viện Tạ Quang Bửu, đại học Bách Khoa, số 1 Đại Cồ Việt, quận Hai Bà Trưng, Tp Hà Nội.';
 				$('#name').text($('#ipName').val());
 				$('#sdt').text($('#ipSdt').val());
 				$('#add').text($('#ipAdd').val());
+				if ($('#ipAdd').attr('disabled')=='disabled') {
+					$('#add').text(add);
+				}
 		});
 	</script>
 

@@ -125,9 +125,9 @@ class myController extends Controller
         $bill->phone_number = $request->phone_number;
         if ($request->address !="") {
         $bill->address = $request->address;
-        }
+        }else
         $bill->address = "nothing";
-        $bill->status = 'delivering';
+        $bill->status = 'processing';
         $bill->create_at = date('Y-m-d H:i:s');
         if($bill->save())
         return redirect()->route('home');
