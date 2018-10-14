@@ -23,10 +23,7 @@ if (isset($_COOKIE['date'])) {
 	<meta charset="utf-8">
 </head>
 <body>
-	@include('header')
-
-	{{-- @include('footer')	 --}}
-
+@include('header')
 <div id="main">
 	<div class="container">
 		<div class="row">
@@ -39,13 +36,11 @@ if (isset($_COOKIE['date'])) {
 					@yield('content')
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
 {{-- @include('footer') --}}
 
-{{-- script --}}
 
 
 </body>

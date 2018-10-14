@@ -1,6 +1,7 @@
 @extends('index')
 @section('title','About Us')
 @section('content')
+{{-- info --}}
 	<legend>Lời mở đầu.</legend>
 		<p>Chào mừng đến với trang bán điện thoại trực tuyến của cửa hàng HUSTphone</p>
 	<legend>Giới thiệu về trang web.</legend>
@@ -12,7 +13,7 @@
 		<p><b>Email:</b> nguyenbatuannghia5996@gmail.com</p>
 
 
-
+{{-- script --}}
 <script>
 		$('#menu5').addClass( "active" );
 </script>

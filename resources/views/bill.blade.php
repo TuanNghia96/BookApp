@@ -16,7 +16,7 @@
 				<th>Tên sản phẩm:</th>
 				<th>Màu sắc:</th>
 				<th>Số lượng:</th>
-				<th>Thành tiền:</th>
+				<th>Thành tiền(₫):</th>
 				<th>Xóa</th>
 				<th>Xem</th>
 			</thead>
@@ -25,7 +25,7 @@
 				<td>{{$value->name}}</td>
 				<td>{{$value->color}}</td>
 				<td>{{$value->number}}</td>
-				<td>{{$value->cost}}</td>
+				<td>{{number_format($value->cost)}}</td>
 				<td><a href="{{route('rmBillD',$value['id'])}}">Xóa đơn hàng.</a></td>
 				<th><a href="{{route('show',$value['id_phone'])}}">Xem chi tiết.</a></th>
 			</tbody>
@@ -41,7 +41,7 @@
 				<h3>Tổng hóa đơn:</h3>
 			</div>
 			<div class="col-md-4 col-sm-5" style="padding:0px;">
-				<h3 class="text-right">{{$cost." đồng"}}</h3>
+				<h3 class="text-right">{{number_format($cost)." đồng"}}</h3>
 			</div>
 		</div>
 
