@@ -53,24 +53,28 @@
 @if($billDetail->count() != 0)
 		<form id="myform" action="{{route('postBill')}}" method="post" class="form-horizontal">
 			@csrf
-			<div class="form-group" >
+			<div id="dvErName" class="col-md-offset-2 col-md-10" style="color: red;"></div>
+			<div id="dvName" class="form-group" >
 				<label class="col-md-2">Nhập tên *:</label>
 				<div class="col-md-10">
 					<input id="ipName" class="form-control" type="text" name="name" required>
 				</div>
 			</div>
-			<div class="form-group" >
+			<div id="dvErSdt" class="col-md-offset-2 col-md-10"style="color: red;"></div>
+			<div id="dvSdt" class="form-group" >
 				<label class="col-md-2">Số điện thoại *:</label>
 				<div class="col-md-10">
-					<input id="ipSdt" class="form-control" type="text" name="phone_number" required>
+					<input id="ipSdt" class="form-control" type="text" name="phone_number" placeholder="Ít nhất 10 số." required>
 				</div>
 			</div>
-			<div class="form-group" >
+			<div id="dvErAdd" class="col-md-offset-2 col-md-10" style="color: red;"></div>
+			<div id="dvAdd" class="form-group" >
 				<label class="col-md-2">Địa chỉ *:</label>
 				<div class="col-md-10">
 					<input id='ipAdd' class="form-control" type="text" name="address" placeholder="Không cần nếu nhận tại cửa hàng." required>
 				</div>
 			</div>
+			
 			<div class="form-group" >
 				<div class="col-md-2">
 					<label>Phương thức:</label>
@@ -84,6 +88,9 @@
 					</label>
 				</div>
 			</div>
+		{{-- 	<div class="form-group has-error">
+  <input type="text" class="form-control" id="inputError1">
+</div> --}}
  			<button  id="btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 				  Xác nhận.
 				</button>
@@ -122,7 +129,7 @@
 				</tr>
 				<tr>
 					<td>Hóa Đơn:</td>
-					<td>{{$cost." đồng"}}</td>
+					<td>{{number_format($cost)." đồng"}}</td>
 				</tr>
 			</table>
       </div>
@@ -147,13 +154,48 @@
 		});
 
 		$('#btn').click(function(){
-				var add = 'Tầng 8 thư viện Tạ Quang Bửu, đại học Bách Khoa, số 1 Đại Cồ Việt, quận Hai Bà Trưng, Tp Hà Nội.';
+				var check = 0;
+				var add = "Tầng 8 thư viện Tạ Quang Bửu, đại học Bách Khoa, số 1 Đại Cồ Việt, quận Hai Bà Trưng, Tp Hà Nội.";
+				//check name input
+				if (!$('#ipName').val()) {
+					check = 1;
+					$('#dvName').addClass('has-error');
+					$('#dvErName').text('Mời nhập tên.');
+				}
+
+				//check phone number input
+				if (!$('#ipSdt').val()) {
+					check = 1;
+					$('#dvSdt').addClass('has-error');
+					$('#dvErSdt').text('Mời nhập số điện thoại.');
+					
+				}else if (isNaN( $("#ipSdt").val() )){
+					check = 1;
+					$('#dvSdt').addClass('has-error');
+					$('#dvErSdt').text('Nhập sai.');
+				}else if ($("#ipSdt").val().length < 10) {
+					check = 1;
+					$('#dvSdt').addClass('has-error');
+					$('#dvErSdt').text('Số điện thoại không hợp lệ(thiếu số).');
+				}
+
+				//check addres input
+				if ($('#ipAdd').attr('disabled')=='disabled') {
+					$('#add').text(add);
+				}else if (!$('#ipAdd').val()) {
+					check = 1;
+					$('#dvAdd').addClass('has-error');
+					$('#dvErAdd').text('Mời nhập địa chỉ.');
+					
+				}
+				if (check==1) {
+					return false;
+				}
+				
 				$('#name').text($('#ipName').val());
 				$('#sdt').text($('#ipSdt').val());
 				$('#add').text($('#ipAdd').val());
-				if ($('#ipAdd').attr('disabled')=='disabled') {
-					$('#add').text(add);
-				}
+				
 		});
 	</script>
 
