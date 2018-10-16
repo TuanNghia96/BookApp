@@ -33,9 +33,9 @@ height: auto;
 </head>
 <body>
 @include('header')
-<section id="body">
-	<div class="container">
-		<div class="row">
+<section id="body" >
+	<div class="container" >
+		<div class="row" style="">
 			<div class="col-md-3 sidebar">
 				@include('menu')
 				@include('item')

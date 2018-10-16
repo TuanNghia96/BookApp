@@ -86,9 +86,9 @@ foreach ($phones as $value) {
 	</div>
 @endforeach
 </div>
-<div class=" col-md-12 text-center">
+{{-- <div class=" col-md-12 text-center">
 	{!!$phones->links()!!}    
-</div>
+</div> --}}
 
 {{-- scritp --}}
 <script>
