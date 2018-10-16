@@ -26,10 +26,8 @@
 @endforeach
 
 
-<div class="col-md-offset-4 col-md-4 text-center">
-
-{!!$phones->links()!!}    
-{{-- {!! $phones->links( "pagination::bootstrap-4") !!} --}}
+<div class=" col-md-12 text-center">
+	{!!$phones->links()!!}    
 </div>
 
 	<script>

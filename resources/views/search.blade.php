@@ -54,7 +54,7 @@ foreach ($phones as $value) {
 </form>
 
 {{-- search status --}}
-<div class="seating">
+
 @if(isset($request))
 	<div class="col-sm-12" style=" margin:10px;" >
 	@foreach($request as $key => $value)
@@ -71,10 +71,9 @@ foreach ($phones as $value) {
 	</div>
 
 @endif
-</div>
 
 {{-- search result --}}
-<div class="col-md-12"></div>
+<div style=" margin-top: 20px;">
 @foreach($phones as $value)
 	<div class="col-xs-6 col-md-3 col-sm-4">
 		<a href="{{route('show',$value['id'])}}" class="thumbnail" style="text-decoration: none;">
@@ -86,7 +85,10 @@ foreach ($phones as $value) {
 	    </a>
 	</div>
 @endforeach
-
+</div>
+<div class=" col-md-12 text-center">
+	{!!$phones->links()!!}    
+</div>
 
 {{-- scritp --}}
 <script>

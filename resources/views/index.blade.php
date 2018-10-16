@@ -6,10 +6,9 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 {{-- bootrap --}}
 <link rel="stylesheet" href= "http://localhost/BookApp/public/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href= "http://localhost/BookApp/public/css/bootstrap.min.css">
-<script type="text/javascript" src="http://localhost/BookApp/public/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="http://localhost/BookApp/public/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <?php
@@ -17,7 +16,17 @@ if (is_null(Session::get('id'))) {
      echo "<meta http-equiv='refresh' content='0;url=http://localhost/BookApp/public/home'>";
 	}
 ?>
-
+<style type="text/css">
+	@media (min-width: 1200px) {
+  .container {
+    width: 1300px;
+  }
+}
+.responsive-img{
+width: 100%;
+height: auto;
+}
+</style>
 {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
 	<meta charset="utf-8">
@@ -29,12 +38,15 @@ if (is_null(Session::get('id'))) {
 		<div class="row">
 			<div class="col-md-3 sidebar">
 				@include('menu')
+				@include('item')
 			</div>
 
 			<div class="col-md-9 col-sm-12 col-xs-12 content">
 				<div class="" style=" padding:5px;">
 					@yield('content')
+					
 				</div>
+
 			</div>
 		</div>
 	</div>

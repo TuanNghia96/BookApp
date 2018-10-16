@@ -27,7 +27,7 @@ class myController extends Controller
         }
 
         $billDetail = Bill::find(1)->billDetail;
-		$phones = Phone::orderBy('id', 'desc')->simplePaginate(6) ;  
+		$phones = Phone::orderBy('id', 'desc')->simplePaginate(8) ;  
     	return view('admin',["phones"=>$phones,'bill'=>$billDetail]);
     }
     //view show
@@ -51,7 +51,7 @@ class myController extends Controller
     }
 
     public function getSearch(){
-        $phones = Phone::all();
+        $phones = Phone::simplePaginate(6);
         return view('search',['phones'=>$phones]);
     }
 

@@ -119,11 +119,11 @@ background: orange linear-gradient(orange,#ff8c00);
     /*border: 2px solid black;*/
 }
 
-.show-grid [class^="col-"]{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color:#eee;
-    border: 1px soild #ddd;
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.2);
+#footer{
+    margin-top: 30px;
+    background: #34495E;
+}
+#footer a{
+    color:#FFFFFF;
+    text-transform: uppercase;
 }
