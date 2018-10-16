@@ -5,8 +5,8 @@
 	<title>Trang chủ | @yield('title')</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 {{-- bootrap --}}
-<link rel="stylesheet" href= "http://localhost/BookApp/public/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href= "http://localhost/BookApp/public/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@ height: auto;
 </head>
 <body>
 @include('header')
-<div id="main">
+<section id="body">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 sidebar">
@@ -41,17 +41,17 @@ height: auto;
 				@include('item')
 			</div>
 
-			<div class="col-md-9 col-sm-12 col-xs-12 content">
+			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="" style=" padding:5px;">
 					@yield('content')
-					
+
 				</div>
 
 			</div>
 		</div>
 	</div>
-</div>
-{{-- @include('footer') --}}
+</section>
+@include('footer')
 
 
 
