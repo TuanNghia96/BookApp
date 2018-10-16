@@ -59,20 +59,20 @@ class myController extends Controller
         $search = array();
         if ($request->name != ""){
             $phones = Phone::where('name','LIKE','%'.$request->name.'%')->get();
-            $search[ 'Ten:'] = $request->name;
+            $search[ 'Tên điện thoại:'] = $request->name;
         }else{
         $phones = Phone::all();
         }
         if ($request->type != "") {
         $phones = $phones->where('made',$request->type);
-        $search['Loai:'] = $request->type;
+        $search['Loại:'] = $request->type;
         }
         //Tim theo gia
         if ($request->cost != "") {
-            $search['Lon hon:']=1000000*$request->cost[0];
+            $search['Lớn hơn:']=1000000*$request->cost[0];
             $phones = $phones->where('cost','>',1000000*$request->cost[0]);
             if ( strlen($request->cost) == 3) {
-                $search['Nho hon:']=1000000*$request->cost[2];
+                $search['Nhỏ hơn:']=1000000*$request->cost[2];
                 $phones = $phones->where('cost','<',1000000*$request->cost[2]);
             }
         }

@@ -56,16 +56,18 @@ foreach ($phones as $value) {
 {{-- search status --}}
 <div class="seating">
 @if(isset($request))
-	<div class="col-sm-12" style=" margin:10px;">
+	<div class="col-sm-12" style=" margin:10px;" >
 	@foreach($request as $key => $value)
-		<span class="label label-default">{{$key}}</span>
-		{{-- <div id="item-key">{{$key}}</div> --}}
-		<span class="label label-primary">{{$value}}</span>
-		{{-- <div id="item-value">{{$value	}}</div> --}}
+		{{-- <div style="margin-right: 5px;"> --}}
+			<div class=" col-md-3 col-xs-12 " style="font-size: 17px;">
+				<label class="label label-default" >{{$key}}</label>
+				<label class="label label-primary" >{{$value}}</label>
+			</div>
+		{{-- </div> --}}
 	@endforeach
 	</div>
-	<div class="col-md-12 col-sm-12 col-xs-12">
-		<p>Tìm thấy {{$i}} sản phẩm</p>
+	<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;">
+		<legend style="font-size: 18px;">Tìm thấy {{$i}} sản phẩm</legend>
 	</div>
 
 @endif

@@ -12,9 +12,8 @@
 	</div>
 	<div class="col-md-8 col-md-offset-1">
 		<div class="col-md-12">
-			<h3>{{$phone['name']}}</h3>
-
-		<p>Đánh giá:</p>
+			<h1>{{$phone['name']}}</h1>
+			<h4>Giá tiền:{{number_format($phone['cost'])}}₫</h4>
 		</div>
 		
 
