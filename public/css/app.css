@@ -127,3 +127,9 @@ background: orange linear-gradient(orange,#ff8c00);
     color:#FFFFFF;
     text-transform: uppercase;
 }
+.navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.navbar-inverse {border-radius:0 !important;}
