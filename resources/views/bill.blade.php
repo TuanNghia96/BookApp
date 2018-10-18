@@ -82,10 +82,10 @@
 				</div>
 				<div class="col-md-10">
 					<label class="radio-inline" >
-						Tại nhà:<input  checked="checked" id="ipHome" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+						<input  checked="checked" id="ipHome" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">:Tại nhà
 					</label>
 					<label class="radio-inline">
-						Tại cửa hàng:<input type="radio" id="ipShop" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+						<input type="radio" id="ipShop" name="inlineRadioOptions" id="inlineRadio3" value="option3">:Tại cửa hàng
 					</label>
 				</div>
 			</div>
