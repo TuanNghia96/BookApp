@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Product --}}
-	<div class="col-md-3">
+	<div class="col-md-3" style="margin-top:20px;">
 	<img width="220" height="220" float="left" src="https://cdn.tgdd.vn/Products/Images/42/192001/samsung-galaxy-j6-plus-1-400x400.jpg">
 	
 	

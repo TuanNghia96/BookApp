@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				
+
 			</button>
 			<a class="navbar-brand" href="{{route('home')}}">HUST phone shop</a>
 		</div>
@@ -45,10 +45,10 @@
 		{{-- bill status --}}
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="{{route('getBill')}}" style="padding-right: 0px;">({{Session::get('number')}})</a>
-				</li>
-				<li>
-					<a href="{{route('getBill')}}" style="margin-right: 30px;"><span class="glyphicon glyphicon-shopping-cart" style="font-size:25px;" aria-hidden="true"></span></a>
+					<a href="{{route('getBill')}}" style="margin-right: 30px;">
+						<span class="glyphicon glyphicon-shopping-cart cart-icon" id="topActionCartNumber" style="margin-top: 15px;position: absolute;font-size:25px;left: 5px;" aria-hidden="true"></span>
+					<span class="cart-num" id="topActionCartNumber" style="position: absolute;top: 6px;color:blue;background: white;border-radius: 100px;padding-right: 5px;padding-left: 5px;left: 21px;">{{Session::get('number')}}</span>
+					</a>
 				</li>
 
 			</ul>
