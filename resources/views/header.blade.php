@@ -18,15 +18,15 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class=""><a href="#">Link <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Tìm kiếm sản phẩm</a></li>
+				<li><a href="{{route('getSearch')}}">Tìm kiếm sản phẩm</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Liên hệ<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Liên kết khách hàng.</a></li>
-						<li><a href="#">Giới thiệu website</a></li>
-						<li><a href="#">Thông tin liên hệ</a></li>
+						<li><a href="{{route('about')}}">Giới thiệu website</a></li>
+						<li><a href="{{route('about')}}">Thông tin liên hệ</a></li>
 						<li role="separator" class="divider"></li>
-						<li><a href="#">Thông tin đến người quản trị</a></li>
+						<li><a href="{{route('getPost')}}">Thông tin đến người quản trị</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a href="#">Dăng nhập( quản trị viên)</a></li>
 					</ul>
