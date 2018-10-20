@@ -65,7 +65,7 @@
 			<div id="dvSdt" class="form-group" >
 				<label class="col-md-2">Số điện thoại *:</label>
 				<div class="col-md-10">
-					<input id="ipSdt" class="form-control" type="text" name="phone_number" placeholder="Ít nhất 10 số." required>
+					<input id="ipSdt" class="form-control" type="text" name="phone_number" placeholder="Ít nhất 9 số." required>
 				</div>
 			</div>
 			<div id="dvErAdd" class="col-md-offset-2 col-md-10" style="color: red;"></div>
@@ -149,55 +149,107 @@
 
 {{-- script --}}
 	<script>
+		var check1 = 0;
+		var check2 = 0;
+		var check3 = 0;
+		var add = "Tầng 8 thư viện Tạ Quang Bửu, đại học Bách Khoa, số 1 Đại Cồ Việt, quận Hai Bà Trưng, Tp Hà Nội.";
 		$('#menu2').addClass( "active" );
 		$('#ipShop').click(function(){
 			$('#ipAdd').removeAttr('required');
+
 			$('#ipAdd').attr('disabled','disabled');
+			$('#ipAdd').val(add);
+			$('#dvAdd').removeClass('has-error');
+			$('#dvAdd').addClass('has-success');
+			$('#dvErAdd').text('');	
 		});
 		$('#ipHome').click(function(){
 			$('#ipAdd').attr('required','required');
 			$('#ipAdd').removeAttr('disabled','disabled');
 		});
 
-		$('#btn').click(function(){
-				var check = 0;
-				var add = "Tầng 8 thư viện Tạ Quang Bửu, đại học Bách Khoa, số 1 Đại Cồ Việt, quận Hai Bà Trưng, Tp Hà Nội.";
-				//check name input
-				if (!$('#ipName').val()) {
-					check = 1;
-					$('#dvName').addClass('has-error');
-					$('#dvErName').text('Mời nhập tên.');
-				}
 
-				//check phone number input
-				if (!$('#ipSdt').val()) {
-					check = 1;
-					$('#dvSdt').addClass('has-error');
-					$('#dvErSdt').text('Mời nhập số điện thoại.');
-					
-				}else if (isNaN( $("#ipSdt").val() )){
-					check = 1;
-					$('#dvSdt').addClass('has-error');
-					$('#dvErSdt').text('Nhập sai.');
-				}else if ($("#ipSdt").val().length < 10) {
-					check = 1;
-					$('#dvSdt').addClass('has-error');
-					$('#dvErSdt').text('Số điện thoại không hợp lệ(thiếu số).');
-				}
+// nhap ten
+		$( "#ipName" ).blur(function(){
+			if (!$('#ipName').val()) {
+				check1 = 0;
+				$('#dvName').addClass('has-error');
+				$('#dvErName').text('Mời nhập tên');
+				
+			}else{
+				check1 = 1;
+				$('#dvName').removeClass('has-error');
+				$('#dvName').addClass('has-success');
+				$('#dvErName').text('');	
+			}
 
-				//check addres input
-				if ($('#ipAdd').attr('disabled')=='disabled') {
+		});
+// so dien thoai
+		$( "#ipSdt" ).blur(function(){
+			if (!$('#ipSdt').val()) {
+				check2 = 0;
+				$('#dvSdt').addClass('has-error');
+				$('#dvErSdt').text('Mời nhập số điện thoại.');
+				
+			}else{
+				check2 = 1;
+				$('#dvSdt').removeClass('has-error');
+				$('#dvSdt').addClass('has-success');
+				$('#dvErSdt').text('');
+			}
+
+		});
+
+		$('#ipSdt').keypress(function(){
+			if (isNaN( $("#ipSdt").val() )){
+				check2 = 0;
+				$('#dvSdt').addClass('has-error');
+				$('#dvErSdt').text('Nhập sai.');
+			}else if ($("#ipSdt").val().length < 8) {
+				check2 = 0;
+				$('#dvSdt').addClass('has-error');
+				$('#dvErSdt').text('Số điện thoại không hợp lệ(thiếu số).');
+			}else{
+				check2 = 1;
+				$('#dvSdt').removeClass('has-error');
+				$('#dvSdt').addClass('has-success');
+				$('#dvErSdt').text('');
+			}
+		});
+
+		$( "#ipAdd" ).blur(function(){
+			if ($('#ipAdd').attr('disabled')=='disabled') {
+					check3 = 1;
 					$('#add').text(add);
-				}else if (!$('#ipAdd').val()) {
-					check = 1;
+			}else if (!$('#ipAdd').val()) {
+					check3 = 0;
 					$('#dvAdd').addClass('has-error');
 					$('#dvErAdd').text('Mời nhập địa chỉ.');
 					
+				}else{
+					check3 = 1;
+				$('#dvAdd').removeClass('has-error');
+				$('#dvAdd').addClass('has-success');
+				$('#dvErAdd').text('');					
 				}
-				if (check==1) {
+		});
+
+		$('#btn').click(function(){
+
+				if (check1==0) {
+					$('#dvName').addClass('has-error');
+					$('#dvErName').text('Mời ten');
+					return false;
+				}else if(check2 == 0){
+					$('#dvSdt').addClass('has-error');
+					$('#dvErSdt').text('Mời nhập số điện thoại.');
+					return false;
+
+				}else if (check3 == 0) {
+					$('#dvAdd').addClass('has-error');
+					$('#dvErAdd').text('Mời nhập địa chỉ.');
 					return false;
 				}
-				
 				$('#name').text($('#ipName').val());
 				$('#sdt').text($('#ipSdt').val());
 				$('#add').text($('#ipAdd').val());

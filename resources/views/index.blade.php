@@ -22,28 +22,7 @@ if (is_null(Session::get('id'))) {
     width: 1300px;
   }
 }
-.responsive-img{
-width: 100%;
-height: auto;
-margin-left: 0px;
-margin-right: 0px;
-}
-.carousel{
-    background: #2f4357;
-    margin-top: 0px;
-}
-.carousel .item{
-    /*min-height: 280px;  Prevent carousel from being distorted if for some reason image doesn't load */
-    width: 100%;
-}
-.carousel .item img{
-    margin: 0 auto; /* Align slide image horizontally center */
-}
-.bs-example{
-	/*margin: 10px;*/	
-	margin-right: px;
-	margin-left:px;
-}
+
 </style>
 {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
