@@ -6,7 +6,7 @@
 <legend>Trang chủ</legend>
 @foreach($phones as $value)
 	<div class="col-xs-6 col-md-3 col-sm-4">
-		<a href="{{route('show',$value['id'])}}" class="thumbnail" style="text-decoration: none;">
+		<a href="{{route('show',$value['id'])}}" class="thumbnail" data-toggle="tooltip" style="text-decoration: none;">
 	    	<label>{{$value['name']}}</label>
 	    	<img class="img-responsive" src="https://cdn.tgdd.vn/Products/Images/42/192001/samsung-galaxy-j6-plus-1-400x400.jpg">
 	    	<p><hr></p>

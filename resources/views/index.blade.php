@@ -23,6 +23,15 @@ if (is_null(Session::get('id'))) {
   }
 }
 
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
 </style>
 {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
